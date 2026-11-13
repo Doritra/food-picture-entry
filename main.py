@@ -1,5 +1,8 @@
-import os, shutil
-src = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'entry.png')
-out = os.environ.get('MAKEFUN_OUTPUT_DIR', '/output')
-os.makedirs(out, exist_ok=True)
-shutil.copyfile(src, os.path.join(out, 'entry.png'))
+import os
+import shutil
+
+src = os.path.join(os.path.dirname(__file__), "entry.png")
+output_dir = os.getenv("MAKEFUN_OUTPUT_DIR", "/output")
+
+os.makedirs(output_dir, exist_ok=True)
+shutil.copyfile(src, os.path.join(output_dir, "entry.png"))
